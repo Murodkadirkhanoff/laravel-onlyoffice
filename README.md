@@ -64,7 +64,13 @@
     php artisan migrate
     php artisan db:seed
     ```
+   
+    При выполнении сидирования будет создан тестовый пользователь со следующими данными:
 
+    ```plaintext
+    Email: test@example.com
+    Password: password
+    ```
 8. Запустите сервер разработки:
 
     ```bash

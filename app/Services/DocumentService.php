@@ -12,7 +12,6 @@ use Illuminate\Support\Str;
 
 class DocumentService
 {
-
     protected DocumentRepository $documentRepository;
 
     public function __construct(DocumentRepository $documentRepository)

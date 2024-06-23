@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>OnlyOffice Editor</title>
-    <script type="text/javascript" src="http://localhost/web-apps/apps/api/documents/api.js"></script>
+    <script type="text/javascript" src="{{env('ONLYOFFICE_HOST')}}/web-apps/apps/api/documents/api.js"></script>
     <style>
         html, body {
             height: 100%;

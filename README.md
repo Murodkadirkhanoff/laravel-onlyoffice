@@ -17,8 +17,8 @@
 1. Клонируйте репозиторий:
 
     ```bash
-    git clone https://github.com/your-username/your-repo.git
-    cd your-repo
+    git clone https://github.com/Murodkadirkhanoff/laravel-onlyoffice.git
+    cd laravel-onlyoffice
     ```
 
 2. Установите зависимости с помощью Composer:
@@ -33,22 +33,39 @@
     cp .env.example .env
     ```
 
-4. Сгенерируйте ключ приложения:
+
+4. Настройте параметры подключения к базе данных и OnlyOffice в файле `.env`:
+
+    ```env
+    APP_URL=http://localhost:8081
+    
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=your_database
+    DB_USERNAME=your_username
+    DB_PASSWORD=your_password
+
+    ONLYOFFICE_HOST=http://localhost:80
+    ONLYOFFICE_SECRET=secret_key_from_onlyoffice
+    ```
+
+5. Сгенерируйте ключ приложения:
 
     ```bash
     php artisan key:generate
     ```
 
-5. Настройте параметры подключения к базе данных в файле `.env`.
+6. Настройте параметры подключения к базе данных в файле `.env`.
 
-6. Выполните миграции и сидирование базы данных:
+7. Выполните миграции и сидирование базы данных:
 
     ```bash
     php artisan migrate
     php artisan db:seed
     ```
 
-7. Запустите сервер разработки:
+8. Запустите сервер разработки:
 
     ```bash
     php artisan serve

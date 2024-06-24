@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Document;
 use Firebase\JWT\JWT;
+use Illuminate\Support\Facades\Auth;
 
 class OnlyOfficeService
 {
@@ -40,7 +41,7 @@ class OnlyOfficeService
             'documentType' => 'word',
             'editorConfig' => [
                 'mode' => 'edit', // режим редактирования
-                'callbackUrl' => env("APP_URL") . "/onlyoffice/callback?file_path=$document->file_path", // URL для коллбэков от OnlyOffice
+                'callbackUrl' => env("APP_URL") . "/onlyoffice/callback?file_path=$document->file_path&document_id=$document->id&auth_id=" . Auth::id(), // URL для коллбэков от OnlyOffice
                 'user' => [
                     'id' => auth()->id(),
                     'name' => auth()->user()->name,

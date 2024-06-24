@@ -22,3 +22,4 @@ Route::get('/', function () {
 
 Route::resource('/docs', \App\Http\Controllers\DocumentController::class)->middleware('auth');
 Route::post('/onlyoffice/callback', [OnlyOfficeController::class, 'callback']);
+

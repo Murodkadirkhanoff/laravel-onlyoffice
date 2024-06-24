@@ -10,12 +10,12 @@ class DocumentRepository implements OnlyOfficeRepositoryInterface
 
     public function getAll()
     {
-        return Document::all();
+        return Document::orderBy('id')->get();
     }
 
     public function getById($id)
     {
-        return Document::find($id);
+        return Document::with('histories')->find($id);
     }
 
     public function create(array $documentData)

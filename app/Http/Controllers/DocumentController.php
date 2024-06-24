@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\DocumentStoreRequest;
+use App\Models\Document;
 use App\Services\DocumentService;
 use App\Services\OnlyOfficeService;
 use Illuminate\Http\Request;
@@ -52,9 +53,10 @@ class DocumentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $document = $this->documentService->getById($id);
+        return view('documents.show', compact('document', 'document'));
     }
 
     /**

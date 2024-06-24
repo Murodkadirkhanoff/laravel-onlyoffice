@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class Document extends Model
 {
@@ -18,6 +20,12 @@ class Document extends Model
         'description',
         'status'
     ];
+
+
+    public function histories()
+    {
+        return $this->hasMany(DocumentHistory::class, 'document_id')->with('user');
+    }
 
     // Связь с пользователем-владельцем файла
     public function user()

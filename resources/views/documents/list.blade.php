@@ -46,7 +46,7 @@
                         <td>{{ $document->status }}</td>
                         <td>{{ $document->created_at }}</td>
                         <td>
-                            <a href="{{ route('docs.edit', $document->id) }}" class="btn btn-sm btn-warning">
+                            <a href="{{ route('docs.edit', $document->id) }}" target="_blank" class="btn btn-sm btn-warning">
                                 <i class="fas fa-edit"></i>
                             </a>
                             <form action="{{ route('docs.destroy', $document->id) }}" method="POST"
@@ -58,6 +58,9 @@
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </form>
+                            <a href="{{ route('docs.show', $document->id) }}" class="btn btn-sm btn-info">
+                                <i class="fas fa-eye"></i>
+                            </a>
                         </td> <!-- Actions column -->
                     </tr>
                 @endforeach
